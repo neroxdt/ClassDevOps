@@ -46,6 +46,7 @@ public class MainTest {
         switch (AMBIENTE) {
             case "LOCAL":
                 initLocalSelenium();
+                System.out.println("HOLA MUNDO!!");
                 break;
             case "REMOTO":
                 initRemoteSelenium();
