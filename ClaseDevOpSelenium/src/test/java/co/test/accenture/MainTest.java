@@ -87,7 +87,9 @@ public class MainTest {
 
         if (this.driver != null) {
             this.driver.quit();
-            this.driver.close();
+            if (this.driver != null) {
+                this.driver.close();
+            }
         }
         report.flush();
         report.close();
