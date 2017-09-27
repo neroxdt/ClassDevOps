@@ -42,12 +42,12 @@ public class MainTest {
             Thread.sleep(5000);
 
             //3) Seleccion Viaje
-            ts.seleccionViaje();
+            //ts.seleccionViaje();
 
             Thread.sleep(3000);
 
             //4) Seleccion Silla
-            ts.seleccionSilla();
+            //ts.seleccionSilla();
         }  catch (InterruptedException e) {
             System.out.println(e.getMessage());
         }           
@@ -86,8 +86,8 @@ public class MainTest {
     public void tearDownMethod() throws Exception {
 
         if (this.driver != null) {
-            //this.driver.quit();
-            //this.driver.close();
+            this.driver.quit();
+            this.driver.close();
         }
         report.flush();
         report.close();
