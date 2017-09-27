@@ -86,10 +86,7 @@ public class MainTest {
     public void tearDownMethod() throws Exception {
 
         if (this.driver != null) {
-            this.driver.quit();
-            if (this.driver != null) {
-                this.driver.close();
-            }
+            this.driver.quit();            
         }
         report.flush();
         report.close();
