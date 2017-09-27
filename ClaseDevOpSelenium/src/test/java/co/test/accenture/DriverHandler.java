@@ -55,6 +55,7 @@ public class DriverHandler implements WebDriver {
         }
         desireCapability.setPlatform(Platform.WINDOWS);
         try {
+            System.out.println(this.getUrl_Hub());
             this.driver = new RemoteWebDriver(new URL(this.getUrl_Hub()), desireCapability);
         } catch (MalformedURLException e) {
             System.out.println(e.getMessage());

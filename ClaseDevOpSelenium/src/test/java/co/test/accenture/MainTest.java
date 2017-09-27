@@ -39,7 +39,7 @@ public class MainTest {
             //2) Llenar Formulario
             ts.llenarFormulario();
 
-            Thread.sleep(3000);
+            Thread.sleep(5000);
 
             //3) Seleccion Viaje
             ts.seleccionViaje();
@@ -63,9 +63,9 @@ public class MainTest {
 
     private void initDriver() {
         this.driver = new DriverHandler();
-        this.driver.setUrl_Hub("http://localhost:4444/wd/hub");
+        this.driver.setUrl_Hub("http://192.168.0.14:4444/wd/hub");
         this.driver.setBrowser(Browser.CHROME);
-        this.driver.setBrowserType(BrowserType.LOCAL);
+        this.driver.setBrowserType(BrowserType.HUB);
         this.driver.setUPDriverHandler();
     }
 

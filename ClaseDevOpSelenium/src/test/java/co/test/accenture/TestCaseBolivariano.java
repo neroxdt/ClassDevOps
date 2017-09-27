@@ -171,8 +171,11 @@ public class TestCaseBolivariano {
         try {
             test.log(LogStatus.INFO, "Seleccionar Viaje");
 
+            Thread.sleep(5000);
+            
             idElement = "//div[contains(@id, 'tabla-ida')]//input[contains(@type, 'radio')]";
-            //Assert.assertTrue(this.mt.getDriver().findElement(By.xpath(idElement)).isDisplayed());
+            //idElement = "//div[contains(@id, 'tabla-ida')]//input[@type='radio' AND @name='viaje_ida']";
+            Assert.assertTrue(this.mt.getDriver().findElement(By.xpath(idElement)).isDisplayed());
             test.log(LogStatus.PASS, "se Encontro el WebElement[" + idElement + "]");
             listaViajeIda = this.mt.getDriver().findElements(By.xpath(idElement));
 
@@ -180,15 +183,26 @@ public class TestCaseBolivariano {
             
             temp = ((int) (Math.random() * (listaViajeIda.size() - 0))) + 0;
             rbIda = listaViajeIda.get(temp);
+            System.out.println("datos rbIda: " + rbIda.getTagName());
+            System.out.println("datos rbIda: " + rbIda.getAttribute("name"));
+            System.out.println("datos rbIda: " + rbIda.getAttribute("type"));
             rbIda.click();
 
+            Thread.sleep(5000);
+            
             idElement = "//div[contains(@id, 'tabla-regreso')]//input[contains(@type, 'radio')]";
+            //idElement = "//div[contains(@id, 'tabla-regreso')]//input[contains(@type, 'radio')]";
             Assert.assertTrue(this.mt.getDriver().findElement(By.xpath(idElement)).isDisplayed());
             test.log(LogStatus.PASS, "se Encontro el WebElement[" + idElement + "]");
             listaViajeRegreso = this.mt.getDriver().findElements(By.xpath(idElement));
 
+            System.out.println("size Lista:  " + listaViajeRegreso.size());
+
             temp = ((int) (Math.random() * (listaViajeRegreso.size() - 0))) + 0;
             rbVuelta = listaViajeRegreso.get(temp);
+            System.out.println("datos rbVuelta: " + rbVuelta.getTagName());
+            System.out.println("datos rbVuelta: " + rbVuelta.getAttribute("name"));
+            System.out.println("datos rbVuelta: " + rbVuelta.getAttribute("type"));
             rbVuelta.click();
 
             idElement = "generar_sillas";
